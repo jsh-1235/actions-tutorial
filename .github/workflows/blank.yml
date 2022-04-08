@@ -35,6 +35,5 @@ jobs:
           pwd
           ls -al
 
-      # Runs a set of commands using the runners shell
-      - name: Run cat
-        run: cat ./index.html
+      - name: Run a one-line script
+        run:  echo -n -e "HELLO\n !\n World!" > text.txt
