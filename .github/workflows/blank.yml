@@ -35,5 +35,10 @@ jobs:
           pwd
           ls -al
 
-      - name: Run a one-line script
-        run:  echo -n -e "HELLO\n !\n World!" > text.txt
+      - name: Read package.json
+        id: package
+        #uses: juliangruber/read-file-action@v1
+        with:
+          path: ./package.json
+      - name: Echo package.json
+        run: echo "${{ steps.package.outputs.content }}"
