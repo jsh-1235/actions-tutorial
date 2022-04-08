@@ -34,11 +34,3 @@ jobs:
         run: |
           pwd
           ls -al
-
-      - name: Read index.html
-        id: package
-        uses: actions/checkout@v3
-        with:
-          path: ./index.html
-      - name: Echo package.json
-        run: echo "${{ steps.package.outputs.content }}"
